@@ -1,0 +1,42 @@
+version: "3.9"
+services:
+  media1_db:
+    image: mysql:8.0
+    container_name: media1_mysql8
+    restart: always
+    volumes:
+      - type: volume
+        source: media1_db
+        target: "/var/lib/mysql"
+    environment:
+      MYSQL_ROOT_PASSWORD: ${DB_ROOT} # rootユーザのパスワード
+      MYSQL_DATABASE: ${DB_NAME} # WordPress用データベース名
+      MYSQL_USER: ${DB_USER} # WordPress用データベース接続ユーザ名
+      MYSQL_PASSWORD: ${DB_PASS} # WordPress用データベース接続パスワード
+    ports:
+      - 9307:3306
+  media1_wordpress:
+    depends_on:
+      - media1_db
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: media1_wordpress
+    restart: always
+    ports:
+      - 10091:80
+    environment:
+      WORDPRESS_DB_HOST: media1_db:3306 # データベースサーバ名：ポート番号
+      WORDPRESS_DB_USER: ${DB_USER} # WordPress用データベース接続ユーザ名(dbの内容に合わせる)
+      WORDPRESS_DB_PASSWORD: ${DB_PASS} # WordPress用データベース接続パスワード(dbの内容に合わせる)
+      WORDPRESS_DB_NAME: ${DB_NAME} # WordPress用データベース名(dbの内容に合わせる)
+      WORDPRESS_DEBUG: 0 # デバッグモードOFF
+    volumes:
+      - type: bind
+        source: "./wp-data/media1-theme"
+        target: "/var/www/html/wp-content/themes/media1-theme"
+      - type: bind
+        source: "./php.ini"
+        target: "/usr/local/etc/php/php.ini"
+volumes:
+  media1_db:

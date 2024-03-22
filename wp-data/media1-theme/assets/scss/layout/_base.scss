@@ -1,0 +1,167 @@
+@charset "utf-8";
+
+// @_base.scss
+// 基礎タグの設定
+
+/* noto-sans-jp-regular - japanese */
+@font-face {
+  font-display: swap;
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 400;
+  src: url($base-dir + 'assets/fonts/noto-sans-jp-v52-japanese-regular.woff2') format('woff2');
+}
+
+/* noto-sans-jp-500 - japanese */
+@font-face {
+  font-display: swap; 
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 500;
+  src: url($base-dir + 'assets/fonts/noto-sans-jp-v52-japanese-500.woff2') format('woff2');
+}
+/* noto-sans-jp-600 - japanese */
+@font-face {
+  font-display: swap;
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 600;
+  src: url($base-dir + 'assets/fonts/noto-sans-jp-v52-japanese-600.woff2') format('woff2');
+}
+
+/* noto-sans-jp-700 - japanese */
+@font-face {
+  font-display: swap;
+  font-family: 'Noto Sans JP';
+  font-style: normal;
+  font-weight: 700;
+  src: url($base-dir + 'assets/fonts/noto-sans-jp-v52-japanese-700.woff2') format('woff2');
+}
+
+/* zen-kaku-gothic-new-regular - japanese */
+@font-face {
+  font-display: swap;
+  font-family: 'Zen Kaku Gothic New';
+  font-style: normal;
+  font-weight: 400;
+  src: url($base-dir + 'assets/fonts/zen-kaku-gothic-new-v15-japanese-regular.woff2') format('woff2');
+}
+
+/* zen-kaku-gothic-new-500 - japanese */
+@font-face {
+  font-display: swap;
+  font-family: 'Zen Kaku Gothic New';
+  font-style: normal;
+  font-weight: 500;
+  src: url($base-dir + 'assets/fonts/zen-kaku-gothic-new-v15-japanese-500.woff2') format('woff2');
+}
+
+/* zen-kaku-gothic-new-700 - japanese */
+@font-face {
+  font-display: swap;
+  font-family: 'Zen Kaku Gothic New';
+  font-style: normal;
+  font-weight: 700;
+  src: url($base-dir + 'assets/fonts/zen-kaku-gothic-new-v15-japanese-700.woff2') format('woff2');
+}
+
+/* zen-kaku-gothic-new-900 - japanese */
+@font-face {
+  font-display: swap;
+  font-family: 'Zen Kaku Gothic New';
+  font-style: normal;
+  font-weight: 900;
+  src: url($base-dir + 'assets/fonts/zen-kaku-gothic-new-v15-japanese-900.woff2') format('woff2');
+}
+
+/* zen-old-mincho-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Zen Old Mincho';
+  font-style: normal;
+  font-weight: 400;
+  src: url($base-dir + 'assets/fonts/zen-old-mincho-v11-latin-regular.woff2') format('woff2'); 
+}
+
+/* zen-old-mincho-500 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Zen Old Mincho';
+  font-style: normal;
+  font-weight: 500;
+  src: url($base-dir + 'assets/fonts/zen-old-mincho-v11-latin-500.woff2') format('woff2'); 
+}
+
+/* zen-old-mincho-600 - japanese */
+@font-face {
+  font-display: swap;
+  font-family: 'Zen Old Mincho';
+  font-style: normal;
+  font-weight: 600;
+  src: url($base-dir + 'assets/fonts/zen-old-mincho-v11-japanese-600.woff2') format('woff2');
+}
+
+/* zen-antique-regular - japanese */
+@font-face {
+  font-display: swap;
+  font-family: 'Zen Antique';
+  font-style: normal;
+  font-weight: 400;
+  src: url($base-dir + 'assets/fonts/zen-antique-v12-japanese-regular.woff2') format('woff2');
+}
+
+/* patrick-hand-regular - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Patrick Hand';
+  font-style: normal;
+  font-weight: 400;
+  src: url($base-dir + 'assets/fonts/patrick-hand-v23-latin-regular.woff2') format('woff2');
+}
+
+/* inter-300 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 300;
+  src: url($base-dir + 'assets/fonts/inter-v13-latin-300.woff2') format('woff2');
+}
+
+/* inter-600 - latin */
+@font-face {
+  font-display: swap;
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  src: url($base-dir + 'assets/fonts/inter-v13-latin-600.woff2') format('woff2'); 
+}
+
+html {
+  color: $baseColor;
+  @include media_queries(pc){
+    a[href^="tel:"]{
+      pointer-events: none;
+    }
+  }
+}
+
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  line-height: 1.9;
+}
+      
+img {
+  font-size: 0;
+  vertical-align: bottom;
+  width: 100%;
+  height: auto;
+}
+
+a {
+  outline: none;
+  text-decoration: none;
+  color: inherit;
+}

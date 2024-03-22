@@ -1,0 +1,49 @@
+@charset "utf-8";
+
+// @_layout.scss
+// ページ共通で入る枠組のクラス
+.pc{
+  display: block !important;
+  @include media_queries(sp){
+    display: none!important;
+  }
+  &--inline{
+    @include media_queries(pc){
+      display: inline!important;
+    }
+  }
+  &--flex{
+    @include media_queries(pc){
+      display: flex!important;
+    }
+  }
+}
+
+.sp {
+  display: block !important;
+  @include media_queries(pc){
+    display: none!important;
+  }
+  &--inline{
+    @include media_queries(sp){
+      display: inline!important;
+    }
+  }
+  &--flex{
+    @include media_queries(sp){
+      display: flex!important;
+    }
+  }
+}
+
+.smallpc{
+  @include media_queries(pc){
+    display: none!important;
+  }
+  @include media_queries(smallpc){
+    display: block!important;
+  }
+  @include media_queries(sp){
+    display: block!important;
+  }
+}

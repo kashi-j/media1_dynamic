@@ -1,0 +1,1144 @@
+@charset "utf-8";
+
+.company{
+  overflow-x: hidden;
+  &__content{
+    display: flex;
+    @include media_queries(pc){
+      justify-content: center;
+      gap: 60px;
+      margin: 120px auto 0 0;
+    }
+    @include media_queries(tab){
+      flex-direction: column-reverse;
+    }
+  }
+  &__main-content{
+    @include media_queries(pc){
+      flex: 1;
+    }
+    @include media_queries(tab){
+      margin-top: 65px;
+    }
+  }
+  &__video{
+    position: relative;
+    width: 100%;
+    padding-top: 56.25%;
+    @include media_queries(pc){
+      margin-bottom: 115px;
+    }
+    @include media_queries(tab){
+      margin-bottom: 105px;
+    }
+    cursor: pointer;
+    img{
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 2;
+    }
+    iframe{
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+    }
+  }
+  &__subtitle{
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    @include media_queries(pc){
+      @include fontsize(30);
+      padding-left: 30px;
+      font-weight: 700;
+    }
+    @include media_queries(tab){
+      @include fontsize(23);
+      padding-left: 20px;
+      font-weight: 400;
+    }
+  }
+
+  // 経営理念
+  .philosophy{
+    &__content{
+      @include media_queries(pc){
+        padding-bottom: 65px;
+        margin-top: 65px;
+        border-bottom: $baseColor solid 1px;
+      }
+      @include media_queries(tab){
+        margin-top: 65px;
+        &:not(:first-of-type){
+          margin-top: 50px;
+        }
+      }
+    }
+    &__title{
+      text-transform: uppercase;
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      @include media_queries(pc){
+        @include fontsize(40);
+      }
+      @include media_queries(tab){
+        @include fontsize(28);
+      }
+      &--orange{
+        color: $acsentColor;
+      }
+      &--green{
+        color: $mainColor;
+      }
+    }
+    &__text{
+      @include media_queries(pc){
+        margin-top: 15px;
+        @include fontsize(18);
+      }
+      @include media_queries(tab){
+        margin-top: 25px;
+      }
+    }
+    &__list{
+      counter-reset: count 0;
+      @include media_queries(pc){
+        margin-top: 15px;
+      }
+      @include media_queries(tab){
+        margin-top: 25px;
+      }
+    }
+    &__item{
+      position: relative;
+      text-indent: -1.85em;
+      padding-left: 1.85em;
+      @include media_queries(pc){
+        @include fontsize(18);
+      }
+      &:not(:first-child){
+        @include media_queries(pc){
+          margin-top: 20px;
+        }
+        @include media_queries(tab){
+          margin-top: 15px;
+        }
+      }
+      &::before{
+        content: "0" counter(count);
+        counter-increment: count 1;
+        font-family: 'Zen Kaku Gothic New', sans-serif;
+        @include fontsize(18);
+        font-weight: 700;
+        margin-right: 10px; 
+      }
+    }
+    &__declaration{
+      border: #978A86 solid 1px;
+      padding: 10px;
+      font-family: 'Zen Antique', serif;
+      color: #565050;
+      letter-spacing: 0.04em;
+      @include media_queries(pc){
+        margin-top: 105px;
+      }
+      @include media_queries(tab){
+        margin-top: 105px;
+      }
+      &-wrapper{
+        background-color: #F5F3F1;
+        @include media_queries(pc){
+          padding: 40px 20px 50px;
+        }
+        @include media_queries(tab){
+          padding: 40px 20px;
+        }
+      }
+      &-title{
+        text-align: center;
+        @include media_queries(pc){
+          @include fontsize(30);
+        }
+        @include media_queries(tab){
+          @include fontsize(20);
+        }
+      }
+      &-list{
+        @include media_queries(pc){
+          @include fontsize(21);
+          max-width: 355px;
+          margin: 30px auto 0;
+        }
+        @include media_queries(tab){
+          margin-top: 25px;
+          text-align: center;
+        }
+      }
+      &-item{
+        &:not(:first-child){
+          margin-top: 15px;
+        }
+        @include media_queries(tab){
+          text-align: center;
+          &:not(:first-child){
+            margin-top: 10px;
+          }  
+        }
+      }
+      &-text{
+        text-align: center;
+        @include media_queries(pc){
+          @include fontsize(14);
+          margin-top: 40px;
+        }
+        @include media_queries(tab){
+          @include fontsize(12);
+          margin-top: 25px;
+        }
+      }
+    }
+  }
+
+  // 代表者メッセージ
+  .message{
+    @include media_queries(pc){
+      margin-top: 115px;
+    }
+    @include media_queries(tab){
+      margin-top: 105px;
+    }
+    &__wrapper{
+      display: flex;
+      line-height: 1.9;
+      @include media_queries(pc){
+        margin: 75px 0 0 0;
+        justify-content: space-between;
+        gap: 20px;
+      }
+      @include media_queries(tab){
+        margin-top: 65px;
+        flex-direction: column;
+        gap: 25px;
+      }
+    }
+    &__img{
+      @include media_queries(pc){
+        max-width: 270px;
+      }
+      @include media_queries(tab){
+        max-width: 230px;
+        margin: 0 auto;
+      }
+      img{
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    &__name{
+      display: flex;
+      align-items: center;
+      gap: 17px;
+      @include media_queries(pc){
+        justify-content: flex-end;
+        margin-top: 20px;
+      }
+      @include media_queries(tab){
+        justify-content: center;
+        margin-top: 15px;
+      }
+    }
+    &__post{
+      display: block;
+      @include media_queries(pc){
+        @include fontsize(14);
+      }
+      @include media_queries(tab){
+        @include fontsize(11);
+      }
+    }
+    &__signature{
+      @include media_queries(pc){
+        max-width: 124px;
+      }
+      @include media_queries(tab){
+        max-width: 80px;
+        line-height: 1;
+      }
+      img{
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+    &__text{
+      @include media_queries(pc){
+        @include fontsize(18);
+        max-width: 520px;
+        flex: 1;
+      }
+      @include media_queries(tab){
+        @include fontsize(14);
+        max-width: 100%;
+      }
+    }
+    &__summary{
+      color: $acsentColor;
+      font-weight: 700;
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      @include media_queries(pc){
+        @include fontsize(24);
+      }
+      @include media_queries(tab){
+        @include fontsize(18);
+      }
+    }
+    &__sentence{
+      @include media_queries(pc){
+        margin-top: 25px;
+      }
+      @include media_queries(tab){
+        margin-top: 15px;
+      }
+      span{
+        display: block;
+        &:not(:first-child){
+          margin-top: 1.9em;
+        }
+      }
+    }
+  }
+
+  // 会社概要
+  .about{
+    margin-top: 100px;
+    &__bg{
+      @include media_queries(pc){
+        position: relative;
+        border-radius: 0px 32px 32px 0px;
+        background: #FAFAFA;
+        &::after{
+          content: '';
+          position: absolute;
+          width: 100vw;
+          height: 100%;
+          background: #FAFAFA;
+          top: 0;
+          left: 0;
+          z-index: -1;
+          margin: 0 calc(-50% - 50vw);
+        }
+      }
+      @include media_queries(smallpc){
+        border-radius: 0;
+        &::after{
+          left: 50%;
+          transform: translateX(-50%);
+          margin: 0;
+        }  
+      }
+    }
+    &__inner{
+      @include media_queries(pc){
+        padding: 100px 40px 140px 0;
+      }
+      @include media_queries(tab){
+        padding: 65px 0 80px;
+      }
+    }
+    &__content{
+      display: flex;
+      border-top: #EEEEEE solid 1px;
+      &:first-of-type{
+        margin-top: 40px;
+      }
+      @include media_queries(pc){
+        gap: 20px;
+        padding: 15px 10px;
+      }
+      @include media_queries(tab){
+        gap: 10px;
+        padding: 15px 5px;
+      }
+    }
+    &__term{
+      font-weight: 700;
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      @include media_queries(pc){
+        width: calc(34% - 20px);
+      }
+      @include media_queries(tab){
+        width: calc(33% - 20px);
+        @include fontsize(14);
+      }
+    }
+    &__description{
+      @include media_queries(pc){
+        width: calc(66% + 20px);
+      }
+      @include media_queries(tab){
+        width: calc(67% + 20px);
+        @include fontsize(14);
+      }
+      ol{
+        list-style: decimal;
+        padding-left: 1.3em;
+      }
+      &-content{
+        display: flex;
+      }
+      &-term{
+        width: 100px;
+        position: relative;
+        &:after{
+          content: ':';
+          position: absolute;
+          right: 13px;
+        }
+        @include media_queries(tab){
+          width: 80px;
+          &:after{
+            right: 8px;
+          }
+        }
+      }
+      &-description{
+        flex: 1;
+      }
+    }
+    &__table{
+      width: 100%;
+      @include fontsize(14);
+      tr,th,td{
+        border: #CCCCCC solid 1px;
+      }
+      th,td{
+        padding: 10px;
+      }
+      th{
+        background-color: #F1F1F1;
+        font-weight: 500;
+      }
+      td{
+        vertical-align: middle;
+        text-align: center;
+      }
+      &--accordion{
+        margin-top: 30px;
+      }
+      &--salary{
+        th:first-child{
+          width: 46%;
+          @include media_queries(tab){
+            width: 50%;
+          }
+        }
+      }
+      &--years{
+        th:first-child{
+          width: 64%;
+          @include media_queries(tab){
+            width: 42%;
+          }
+        }
+      }
+      &--paidholiday{
+        th:first-child{
+          width: 75%;
+        }
+        td{
+          width: 25%;
+        }
+      }
+      &-caption{
+        margin-bottom: 10px;
+        text-align: left;
+      }
+    }
+    .table{
+      display:grid;
+      border: 0.5px solid #ccc;
+      @include media_queries(pc){
+        @include fontsize(14);
+        grid-template:
+        "row01-1 row01-2 row01-3 row01-4" auto
+        "row02-1 row02-2 row02-3 row02-4" auto
+        / 39% auto auto auto
+        ;
+      }
+      @include media_queries(tab){
+        @include fontsize(12);
+        grid-template:
+        "row01-1 row02-1"
+        "row01-2  row02-2 "
+        "row01-3  row02-3 "
+        "row01-4  row02-4 "
+        / 32% 68%
+        ;
+      }
+      &__row01,
+      &__row02{
+        border: 0.5px solid #ccc;
+        display: grid;
+        place-items: center;
+        text-align: center;
+        @include media_queries(pc){
+          padding: 10px 10px;
+        }
+        @include media_queries(tab){
+          padding: 5px 10px;
+        }
+      }
+      &__row01{
+        background-color: #F1F1F1;
+        &:nth-child(1){
+          grid-area: row01-1;
+        }
+        &:nth-child(2){
+          grid-area: row01-2;
+        }
+        &:nth-child(3){
+          grid-area: row01-3;
+        }
+        &:nth-child(4){
+          grid-area: row01-4;
+        }
+      }
+      &__row02{
+        &:nth-child(1){
+          grid-area: row02-1;
+        }
+        &:nth-child(2){
+          grid-area: row02-2;
+        }
+        &:nth-child(3){
+          grid-area: row02-3;
+        }
+        &:nth-child(4){
+          grid-area: row02-4;
+        }
+        &.bg{
+          background-color: #F1F1F1;
+        }
+      }
+    }
+    &__accordion{
+      border-bottom: #EEEEEE solid 1px;
+      @include media_queries(pc){
+        padding-bottom: 25px;
+      }
+      @include media_queries(tab){
+        padding-bottom: 15px;
+      }
+      &-detail{
+        display: none;
+      }
+      &-btn{
+        width: fit-content;
+        margin: 65px auto 0;
+        position: relative;
+        cursor: pointer;
+        padding-right: 20px;
+        &::before{
+          content: 'もっと見る';
+        }
+        &::after{
+          content: '+';
+          position: absolute;
+          @include fontsize(20);
+          top: 50%;
+          transform: translateY(-50%);
+          margin-left: 10px;
+        }
+        &.is-active{
+          &::before{
+            content: '閉じる';
+          }
+          &::after{
+            content: '－';
+            font-weight: 700;
+          }
+        }
+      }
+      &-inner{
+        display: flex;
+        gap: 20px;
+        padding: 0 10px;
+        margin-top: 65px;
+        @include fontsize(14);
+        @include media_queries(tab){
+          flex-direction: column;
+          padding: 0;
+        }
+      }
+      &-content{
+        &--left{
+          width: calc(52% - 10px);
+          @include media_queries(tab){
+            width: 100%;
+          }
+        }
+        &--right{
+          width: calc(48% - 10px);
+          @include media_queries(tab){
+            width: 100%;
+          }
+          .about__table--accordion{
+            margin-top: 0;
+          }
+        }
+      }
+      &-title{
+        font-weight: 700;
+        font-family: 'Zen Kaku Gothic New', sans-serif;
+        @include media_queries(pc){
+          @include fontsize(18);
+        }
+        @include media_queries(tab){
+          @include fontsize(16);
+        }
+      }
+      &-wrapper{
+        background-color: #fff;
+        border-left: $baseColor solid 1px;
+        padding: 30px 40px;
+        margin-top: 10px;
+        @include media_queries(tab){
+          padding: 30px 20px;
+        }
+      }  
+      &-subtitle{
+        font-weight: bold;
+        @include media_queries(pc){
+          @include fontsize(16);
+        }
+        @include media_queries(tab){
+          @include fontsize(14);
+        }
+        &:nth-child(2){
+          margin-top: 20px;
+        }
+      }
+      &-graph{
+        margin-top: 20px;
+      }
+      .graph{
+        display: flex;
+        align-items: center;
+        position: relative;
+        @include media_queries(smallpc){
+          flex-direction: column;
+        }
+        @include media_queries(tab){
+          flex-direction: row;
+        }
+        &__container{
+          position: relative;
+          @include media_queries(pc){
+            width: 190px;
+          }
+          @include media_queries(sp){
+            width: 170px;
+          }
+          &::before,
+          &:after{
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+          }
+          &::before{
+            content: '全労働者';
+            position: absolute;
+            margin-top: -10px;
+            @include media_queries(sp){
+              @include fontsize(12);
+            }
+          }
+          &::after{
+            content: '名';
+            position: absolute;
+            @include media_queries(pc){
+              margin: 14px 0 0 34px;
+            }
+            @include media_queries(sp){
+              @include fontsize(12);
+              margin: 12px 0 0 24px;
+            }
+          }
+        }
+        &__canvas{
+          @include media_queries(pc){
+            width: 190px;
+            height: 190px;
+          }
+          @include media_queries(sp){
+            width: 170px;
+            height: 170px;
+          }
+        }
+        &__percentage{
+          position: absolute;
+          color: #fff;
+          font-weight: 700;
+          @include fontsize(15);
+          top: 15%;
+          left: 50%;
+          transform: translateX(-50%);
+          &--male{
+            margin-left: 18%;
+          }
+          &--female{
+            margin-left: -16%;
+          }
+          span{
+            @include fontsize(10);
+          }
+        }
+        &__info{
+          @include media_queries(pc){
+            @include fontsize(16);
+            margin-left: 8px;
+          }
+          @include media_queries(smallpc){
+            @include fontsize(14);
+            display: flex;
+            margin: 5px 0 0 0;
+            gap: 10px;
+          }
+          @include media_queries(tab){
+            gap: 20px;
+            flex-direction: column;
+            margin: 0 0 0 20px;
+          }
+          @include media_queries(sp){
+            margin: 0 0 0 5px;
+          }
+          span{
+            font-weight: 700;
+            display: inline-block;
+            letter-spacing: -0.01em;
+            line-height: 1;
+            @include media_queries(pc){
+              @include fontsize(24);
+              margin: 3px 3px 0 5px;
+            }
+            @include media_queries(smallpc){
+              @include fontsize(20);
+            }
+            @include media_queries(tab){
+              @include fontsize(22);
+              margin: 0 3px 0 5px;
+            }
+          }
+        }
+      }
+      &-note{
+        text-indent: -1em;
+        padding-left: 1em;
+        color: #757578;
+        margin: 10px 0 40px;
+      }
+    }
+    .quality{
+      line-height: 1.9;
+      @include media_queries(pc){
+        margin-top: 65px;
+      }
+      @include media_queries(tab){
+        margin-top: 105px;
+      }
+      &__title{
+        font-weight: 400;
+        @include media_queries(pc){
+          @include fontsize(28);
+          &:not(:first-child){
+            margin-top: 80px;
+          }
+        }
+        @include media_queries(tab){
+          @include fontsize(22);
+          &:not(:first-child){
+            margin-top: 105px;
+          }
+        }
+      }
+      &__subtitle{
+        color: $acsentColor;
+        font-weight: 400;
+        @include media_queries(pc){
+          @include fontsize(18);
+        }
+        @include media_queries(sp){
+          @include fontsize(14);
+        }
+      }
+      &__content{
+        @include media_queries(pc){
+          margin-top: 75px;
+          &:not(:first-of-type){
+            margin-top: 65px;
+          }
+        }
+        @include media_queries(tab){
+          margin-top: 65px;
+        }
+        &-title{
+          font-weight: 400;
+          @include media_queries(pc){
+            @include fontsize(22);
+          }
+          @include media_queries(sp){
+            @include fontsize(20);
+          }
+        }
+      }
+      &__wrapper{
+        display: flex;
+        flex-direction: column;
+        border-top: #EEEEEE solid 1px;
+        margin-top: 15px;
+        @include media_queries(pc){
+          padding-top: 40px;
+          gap: 25px;
+        }
+        @include media_queries(sp){
+          padding-top: 25px;
+          gap: 40px;
+        }
+      }
+      &__item{
+        display: flex;
+        justify-content: space-between;
+        @include media_queries(pc){
+          gap: 30px;
+        }
+        @include media_queries(sp){
+          gap: 25px;
+          flex-direction: column;
+        }
+        &-img{
+          @include media_queries(pc){
+            max-width: 240px;
+          }
+        }
+        &-wrapper{
+          flex: 1;
+          @include media_queries(pc){
+            max-width: 540px;
+          }
+          @include media_queries(tab){
+            max-width: 100%;
+          }
+        }
+        &-title{
+          font-weight: 400;
+          @include media_queries(pc){
+            @include fontsize(22);
+          }
+          @include media_queries(tab){
+            @include fontsize(20);
+          }
+        }
+        &-text{
+          @include fontsize(14);
+          @include media_queries(pc){
+            margin-top: 20px;
+          }
+          @include media_queries(tab){
+            margin-top: 15px;
+          }
+        }
+      }
+    }  
+  }
+
+  // 沿革
+  .history{
+    position: relative;
+    @include media_queries(pc){
+      margin: 100px 0 0 0;
+    }
+    @include media_queries(tab){
+      margin: 65px 0 0 0;
+    }
+    &::after{
+      position: absolute;
+      content: '';
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      background-color: $baseColor;
+
+    }
+    &__content{
+      &:first-of-type{
+        @include media_queries(pc){
+          margin-top: 65px;
+        }
+        @include media_queries(tab){
+          margin-top: 40px;
+        }
+      }
+    }
+    &__decade{
+      font-weight: 900;
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      text-align: center;
+      border-top: $baseColor solid 1px; 
+      border-bottom: $baseColor solid 1px;
+      line-height: 1em;
+      @include media_queries(pc){
+        @include fontsize(70);
+        padding: 20px 0 28px;
+      }
+      @include media_queries(tab){
+        @include fontsize(22);
+        padding: 13px 0 18px;
+      }
+    }
+    &__inner{
+      position: relative;
+      @include media_queries(pc){
+        padding: 40px 0;
+      }
+      @include media_queries(tab){
+        padding: 30px 0;
+      }
+      &::before{
+        content: '';
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        background-color: $baseColor;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+    }
+    &__item{
+      width: 50%;
+      &:nth-child(odd){
+        margin-right: auto;
+        .history__year{
+          border-bottom: $acsentColor solid 1px;
+          color: $acsentColor;
+          &:after{
+            background-color: $acsentColor;
+            bottom: -6px;
+            right: -6px;
+          }
+        }
+        .history__text{
+          @include media_queries(pc){
+            padding-right: 20px;
+          }
+          @include media_queries(tab){
+            padding-right: 10px;
+          }  
+        }
+      }
+      &:nth-child(even){
+        margin-left: auto;
+        .history__year{
+          border-bottom: $mainColor solid 1px;
+          color: $mainColor;
+          @include media_queries(pc){
+            padding-left: 20px;
+          }
+          @include media_queries(tab){
+            padding-left: 10px;
+          }
+          &:after{
+            background-color: $mainColor;
+            bottom: -6px;
+            left: -6px;
+          }
+        }
+        .history__text{
+          @include media_queries(pc){
+            padding-left: 20px;
+          }
+          @include media_queries(tab){
+            padding-left: 10px;
+          }  
+        }
+      }
+    }
+    &__year{
+      position: relative;
+      font-weight: 700;
+      font-family: 'Zen Kaku Gothic New', sans-serif;
+      @include media_queries(pc){
+        @include fontsize(20);
+      }
+      @include media_queries(tab){
+      } 
+      &::after{
+        content: '';
+        position: absolute;
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+      }
+    }
+    &__text{
+      font-weight: 400;
+      margin-top: 8px;
+      @include media_queries(sp){
+        @include fontsize(12);
+      }  
+    }
+  }
+
+
+
+
+
+
+  &__sidemenu{
+    @include media_queries(pc){
+      position: sticky;
+      top: 65px;
+      padding-top: 20px;
+      height: fit-content;
+      width: 190px;
+    }
+    @include media_queries(tab){
+      position: inherit;
+      width: 100%;
+      margin-top: 65px;
+    }
+    &-list{
+      @include media_queries(tab){
+        display: flex;
+        flex-wrap: wrap;
+        gap: 15px 10px;
+        justify-content: flex-end;
+      }
+    }
+    &-item{
+      @include media_queries(pc){
+        &:not(:first-of-type){
+          margin-top: 30px;
+        }
+      }
+      @include media_queries(tab){
+        width: calc(50% - 5px);
+        &:not(:first-of-type){
+          margin-top: 0;
+        }
+      }  
+    }
+    &-link{
+      display: block;
+      transition: all 0.3s;
+      position: relative;
+      font-weight: 500;
+      @include media_queries(pc){
+        @include fontsize(18);
+        padding-left: 30px;
+        &::before{
+          content: '';
+          position: absolute;
+          width: 8px;
+          height: 8px;
+          background-color: #fff;
+          border-radius: 50%;
+          top: 50%;
+          transform: translateY(-50%);
+          left: 0;
+          margin-top: 1px;
+          transition: all 0.3s;
+        }
+        &:hover{
+          color: $acsentColor;
+        }
+      }
+      @include media_queries(tab){
+        @include fontsize(14); 
+        font-weight: 700;
+        padding-left: 0;
+        border: #C5C3C3 solid 1px;
+        border-radius: 70px;
+        width: 100%;
+        height: 48px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding-right: 12px;
+        box-sizing: border-box;
+        line-height: 1;
+        &::before{
+          content: '';
+          position: absolute;
+          top: 50%;
+          right: 16px;
+          left: inherit;
+          transform: translateY(-50%);
+          transition: all 0.3s;
+          background-color: $baseColor;
+          width: 1px;
+          height: 16px;
+        }
+        &::after{
+          content: '';
+          position: absolute;
+          transition: all 0.3s;
+          border-right: $baseColor 1px solid;
+          border-bottom: $baseColor 1px solid;
+          width: 4px;
+          height: 4px;
+          bottom: 16px;
+          right: 14px;
+          transform: rotate(45deg);
+        }
+      }
+      &.is-on{
+        color: $acsentColor;
+        @include media_queries(tab){
+          border: $acsentColor solid 1px;
+        }
+        &::before{
+          background-color: $acsentColor;
+        }
+        &::after{
+          border-right: $acsentColor 1px solid;
+          border-bottom: $acsentColor 1px solid;
+        }
+      }   
+    }
+    .mod-text-link{
+      border-bottom: $baseColor solid 1px;
+      @include media_queries(pc){
+        width: 160px;
+        margin-top: 80px;
+        padding: 0 90px 10px 3px;
+        margin-left: 30px;
+      }
+      @include media_queries(tab){
+        width: 160px;
+        margin-top: 40px;
+        padding: 0 90px 5px 5px;
+        margin-left: auto;
+      }
+      &::before{
+        right: 12px;
+      }
+      &::after {
+        right: 12px;
+      }
+      &:hover{
+        @include media_queries(pc){
+          &::before{
+            right: 3px;
+          }
+          &::after{
+            right: 3px;
+          }
+        }
+      }
+    }  
+  }
+}  
