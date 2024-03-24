@@ -12,10 +12,6 @@ DB: mysql
 
 プラグイン(wp-content/plugins/)やメディア画像(wp-content/upload/_)は Git 管理が煩雑になる他、後で説明するプラグインを介してインストールすることを想定している。（Git 管理しない）
 
-# Wordpress の環境構築手順
-
-dockerを用いた場合の手順を下記に記す。
-
 # 要件
 
 - 統合開発環境に VScode を使用
