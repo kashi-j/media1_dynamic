@@ -1,3 +1,5 @@
+![screencapture-kashi-j-github-io-media1-static-2024-03-24-15_30_55 (1)](https://github.com/kashi-j/media1_static/assets/69555348/a0036d9f-fb7b-47d8-a992-b826d9e72464)
+
 # 要件
 
 themes 配下を git 管理しており、環境構築に使用するツールは問わない。ただし、PHP と Wordpress のバージョンは本番環境に近いバージョンで構築するのが望ましい。
