@@ -1,0 +1,118 @@
+@charset "utf-8";
+
+.terms{
+  &__content{
+    @include media_queries(pc){
+      margin-top: 145px;
+    }
+    @include media_queries(sp){
+      margin-top: 60px;
+    }
+  }
+  &__item{
+    @include media_queries(pc){
+      margin-top: 80px;
+    }
+    @include media_queries(sp){
+      margin-top: 20px;
+    }
+    a{
+      color: #007CCF;
+      text-decoration: underline;
+    }
+  }
+  &__title{
+    font-weight: 500;
+    @include media_queries(pc){
+      @include fontsize(16);
+    }
+    @include media_queries(sp){
+      @include fontsize(14);
+    }
+  }
+  &__lead{
+    @include media_queries(sp){
+      @include fontsize(14);
+    }
+  }
+  &__list{
+    padding-left: 1.4em;
+    @include media_queries(pc){
+      @include fontsize(16);
+      margin-top: 20px;
+    }
+    @include media_queries(sp){
+      @include fontsize(14);
+      margin-top: 10px;
+    }
+    &--ordered{
+      list-style: number;
+      .terms__list-item{
+        &:not(:first-child){
+          @include media_queries(pc){
+            margin-top: 1em;
+          }
+          @include media_queries(sp){
+            margin-top: 0.5em;
+          }
+        }
+      }
+    }
+    &--brackets{
+      margin-left: 1.3em;
+      .terms__list-item{
+        position: relative;
+        list-style-type: none;
+        counter-increment: cnt;
+        &:not(:first-child){
+          @include media_queries(pc){
+            margin-top: 1em;
+          }
+          @include media_queries(sp){
+            margin-top: 0.5em;
+          }
+        }
+        &::before{
+          content: "(" counter(cnt) ")";
+          display: inline-block;
+          margin-left: -3.5em;
+          width: 3em;
+          text-align: right;
+          position: absolute;
+          top: 0;
+          left: 0;
+          @include media_queries(sp){
+            @include fontsize(14);
+          }
+        }
+      }
+    }
+    &--note{
+      .terms__list-item{
+        position: relative;
+        @include fontsize(12);
+        text-indent: -1.1em;
+        padding-left: 1.1em;
+        &::before{
+          content: "※";
+        }
+      }
+    }
+  }
+  &__text{
+    @include media_queries(pc){
+      margin-top: 20px;
+    }
+    @include media_queries(sp){
+      margin-top: 10px;
+      @include fontsize(14);
+    }
+  }
+  &__info{
+    margin-left: 1em;
+    margin-top: 20px;
+    @include media_queries(sp){
+      @include fontsize(14);
+    }
+  }
+}

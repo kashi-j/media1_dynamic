@@ -1,0 +1,4 @@
+.env
+
+# WordPress のバックアップはリポジトリに置かない
+*.wpress

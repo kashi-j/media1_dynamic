@@ -1,0 +1,445 @@
+@charset "utf-8";
+
+.online{
+  background: none;
+  overflow-x: hidden;
+  .header__link{
+    color: #fff;
+    &:hover{
+      @include media_queries(pc){
+        color: $acsentColor;
+      }
+    }
+    &.is-active{
+      color: $acsentColor;
+    }
+  }
+  .header__btn-link{
+    color: #fff;
+  }
+  .header__menu{
+    &-trigger{
+      span{
+        background-color: #fff;
+        &::before,
+        &::after{
+          background: #fff;
+        }
+      }
+      &.is-active{
+        span{
+          background: transparent;
+        }
+      }
+    }
+    &-text{
+      &::after{
+        color: #fff;
+      }
+    }
+  }
+  &__mv{
+    width: 100%;
+    background: url($base-dir + 'assets/img/online/img_mv.webp') no-repeat center center / cover;
+    color: #fff;
+    @include media_queries(pc){
+      margin-top: -90px;
+      height: 690px;
+    }
+    @include media_queries(sp){
+      margin-top: -70px;
+      padding-bottom: 60px;
+    }
+    &-inner{
+      margin: 0 auto;
+      padding-top: 155px;
+      @include media_queries(pc){
+        width: calc(100% - 60px);
+        max-width: 1120px;
+      }
+      @include media_queries(sp){
+        width: calc(100% - 40px);
+      }
+    }
+    &-lead{
+      display: flex;
+      @include media_queries(pc){
+        gap: 60px;
+        margin-top: 40px;
+        padding-top: 65px;
+        border-top: 1px solid #FFFFFF66;
+      }
+      @include media_queries(sp){
+        flex-direction: column;
+      }
+      &-head{
+        text-indent: -0.5em;
+        @include media_queries(pc){
+          @include fontsize(24);
+        }
+        @include media_queries(sp){
+          @include fontsize(20);
+          margin-top: 65px;
+        }
+      }
+      &-text{
+        line-height: 2.2;
+        flex: 1;
+        @include media_queries(sp){
+          @include fontsize(14);
+          margin-top: 25px;
+        }
+      }
+    }
+  }
+  &__inner{
+    @include media_queries(pc){
+      padding-top: 190px;
+    }
+    @include media_queries(sp){
+      padding-top: 70px;
+    }
+  }
+  &__pickup{
+    position: relative;
+    z-index: 0;
+    @include media_queries(pc){
+      width: calc(100% - 200px);
+      max-width: 750px;
+      margin: 0 auto;
+      padding: 0 0 105px;
+    }
+    @include media_queries(sp){
+      width: calc(100% - 40px);
+      margin: 0 auto;
+      padding: 0 0 55px;
+    }
+    &::after{
+      content: '';
+      width: 100vw;
+      margin-right: calc(50% - 50vw);
+      margin-left: calc(50% - 50vw);
+      position: absolute;
+      background-color: #F7F8F9;
+      bottom: 0;
+      left: 0;
+      z-index: -1;
+      @include media_queries(pc){
+        height: 75%;
+      }
+      @include media_queries(sp){
+        height: 87%;
+      }
+    }
+    &-img{
+      border: $acsentColor 2px solid;
+      position: relative;
+      &::before{
+        content: 'PICKUP';
+        color: #fff;
+        position: absolute;
+        z-index: -1;
+        border-radius: 50%;
+        background-color: $acsentColor;
+        font-family: 'Inter', sans-serif;
+        text-align: center;
+        @include media_queries(pc){
+          @include fontsize(24);
+          top: -100px;
+          left: -100px;
+          width: 160px;
+          height: 160px;
+          line-height: 160px
+        }
+        @include media_queries(sp){
+          @include fontsize(14);
+          top: -58px;
+          left: -20px;
+          width: 78px;
+          height: 78px;
+          line-height: 78px;
+        } 
+      }
+    }
+    &-title{
+      @include media_queries(pc){
+        margin-top: 65px;
+        @include fontsize(24);
+      }
+      @include media_queries(sp){
+        margin-top: 40px;
+        @include fontsize(18);
+      }
+    }
+    &-text{
+      line-height: 2.2;
+      @include media_queries(pc){
+        margin-top: 40px;
+      }
+      @include media_queries(sp){
+        margin-top: 25px;
+        @include fontsize(14);
+      }
+    }
+  }
+  &__subtitle{
+    @include media_queries(pc){
+      @include fontsize(24);
+    }
+    @include media_queries(sp){
+      @include fontsize(22);
+    }
+  }
+  &__shop{
+    @include media_queries(pc){
+      margin: 105px auto 0;
+      width: calc(100% - 60px);
+      max-width: 1120px;
+    }
+    @include media_queries(sp){
+      margin: 40px auto 0;
+      width: calc(100% - 40px);
+    }
+    &-list{
+      display: grid;
+      justify-content: center;
+      grid-gap: 65px;
+      @include media_queries(pc){
+        grid-template-columns: repeat(auto-fit, 330px);
+        margin-top: 65px;
+      }
+      @include media_queries(sp){
+        margin-top: 50px;
+      }
+    }
+    &-item{
+      @include media_queries(pc){
+        max-width: 330px;
+      }
+      @include media_queries(sp){
+        max-width: 335px;
+      }
+      &-title{
+        font-weight: 500;
+        padding-left: 28px;
+        position: relative;
+        @include fontsize(16);
+        @include media_queries(pc){
+          margin-top: 40px;
+        }
+        @include media_queries(sp){
+          margin-top: 25px;
+        }
+        &::before{
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          width: 12px;
+          height: 12px;
+          border-radius: 50%;
+        }
+        &--official{
+          &::before{
+            background-color: $acsentColor;
+          }
+        }
+        &--rakuten{
+          &::before{
+            background-color: #BF0000;
+          }
+        }
+        &--amazon{
+          &::before{
+            background-color: #333E48;
+          }
+        }
+      }
+      &-text{
+        margin-top: 15px;
+        @include media_queries(sp){
+          @include fontsize(14);
+        }
+      }
+    }
+  }
+  &__recommend{
+    @include media_queries(pc){
+      margin-top: 215px;
+    }
+    @include media_queries(sp){
+      margin-top: 105px;
+    }
+    &-wrapper{
+      display: flex;
+      justify-content: space-between;
+      @include media_queries(pc){
+        gap: 30px;
+        margin-top: 65px;
+      }
+      @include media_queries(sp){
+        flex-direction: column;
+        align-items: center;
+        gap: 40px;
+        margin-top: 40px;
+      }
+    }
+    &-img{
+      max-width: 470px;
+      flex: 1;
+    }
+    &-main{
+      max-width: 480px;
+      flex: 1;
+      &-name{
+        font-weight: 400;
+        @include media_queries(pc){
+          @include fontsize(22);
+        }
+        @include media_queries(sp){
+          @include fontsize(18);
+        }
+        .status-icon{
+          display: block;
+          width: fit-content;
+          line-height: 1em;
+          color: $acsentColor;
+          border: $acsentColor 1px solid;
+          margin-bottom: 25px;
+          @include media_queries(pc){
+            @include fontsize(16);
+            padding: 11px 19px 12px;
+          }
+          @include media_queries(sp){
+            @include fontsize(12);
+            padding: 10px 19px;
+          }
+        }
+      }
+      &-text{
+        @include media_queries(pc){
+          margin-top: 40px;
+        }
+        @include media_queries(sp){
+          margin-top: 25px;
+          @include fontsize(14);
+        }
+      }
+    }
+    &-shops{
+      @include media_queries(pc){
+        margin-top: 65px;
+      }
+      @include media_queries(sp){
+        margin-top: 40px;
+      }
+    }
+    &-shop{
+      &:not(:first-child){
+        margin-top: 10px;
+      }
+    }
+    &-list{
+      justify-content: center;
+      margin-top: 105px;
+      justify-content: flex-start;
+      @include media_queries(pc){
+        display: grid;
+        grid-gap: 50px;
+        grid-template-columns: repeat(auto-fit, 242px);
+      }
+      @include media_queries(sp){
+        display: flex;
+        flex-wrap: wrap;
+        gap: 40px 10px;
+      }
+      &-item{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        @include media_queries(pc){
+          width: 242px;
+        }
+        @include media_queries(sp){
+          width: calc(50% - 5px);
+        }
+        .status-icon{
+          width: fit-content;
+          line-height: 1em;
+          background-color: $acsentColor;
+          color: #fff;
+          @include media_queries(pc){
+            @include fontsize(14);
+            padding: 15px 14px;
+          }
+          @include media_queries(sp){
+            @include fontsize(12);
+            padding: 10px 8px;
+          }
+        }
+        .online__recommend-shops{
+          margin-top: 15px;
+        }
+        .online__recommend-shop{
+          &:not(:first-child){
+            margin-top: 5px;
+          }
+        }
+        .mod-shop-link{
+          @include fontsize(14);
+          @include media_queries(pc){
+            padding: 18px 10px;
+          }
+          @include media_queries(sp){
+            padding: 15px 10px;
+          }
+          &--official{
+            @include media_queries(pc){
+              padding: 18px 35px 18px 10px;
+            }
+            @include media_queries(sp){
+              padding: 16px 3px 17px;
+              @include fontsize(11);
+            }
+          }
+          &::after {
+            right: 12px;
+            @include media_queries(sp){
+              display: none;
+            }
+          }
+        }
+        .online__recommend-shops{
+          @include media_queries(sp){
+            margin-top: 25px;
+          }
+        }
+      }
+      &-title{
+        @include fontsize(14);
+        font-weight: 400;
+        @include media_queries(pc){
+          margin-top: 25px;
+        }
+        @include media_queries(sp){
+          margin-top: 15px;
+        }
+      }
+    }
+  }
+  .aioseo-breadcrumbs{
+    @include media_queries(pc){
+      width: calc(100% - 60px);
+      max-width: 1120px;
+      margin: 200px auto 0;
+      padding-bottom: 30px;
+    }
+    @include media_queries(sp){
+      width: calc(100% - 40px);
+      margin: 100px auto 0;
+      padding-bottom: 20px;
+    }
+  }
+}

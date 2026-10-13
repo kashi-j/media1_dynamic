@@ -1,0 +1,27 @@
+@charset "utf-8";
+//画面幅
+$breakpoint: (
+  pc: "screen and (min-width: 769px)",
+  smallpc: "screen and (max-width:1280px)",
+  tab: "screen and (max-width:980px)",
+  sp: "screen and (max-width: 768px)",
+);
+
+@mixin media_queries($bp) {
+  @media #{map-get($breakpoint, $bp)} {
+    @content;
+  }
+}
+
+//カラー
+$baseColor: #6a6a6a;
+$mainColor: #6a6a6a;
+$acsentColor: #6a6a6a;
+
+//フォントサイズ
+@mixin fontsize($size, $base: 16) {
+  font-size: $size + px;
+  font-size: ($size / $base) + rem;
+}
+
+$base-dir: "/wp-content/themes/media1-theme/";

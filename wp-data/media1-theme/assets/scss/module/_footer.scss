@@ -1,0 +1,218 @@
+@charset "utf-8";
+/* footer */
+.footer {
+  position: relative;
+  background-color: $baseColor;
+  color: #fff;
+  padding: 60px 0 30px;
+  &__inner {
+    width: calc(100% - 60px);
+    max-width: 1120px;
+    margin: 0 auto;
+  }
+  &__logo {
+    width: 68px;
+    margin-bottom: 10px;
+  }
+  &__content-inner {
+    display: grid;
+    width: 100%;
+    @include media_queries(pc) {
+      max-width: 1120px;
+      margin: 0 auto 60px;
+      gap: 0;
+      grid-template-columns: 33% 43% 24%;
+      grid-template-rows: 57% 43%;
+      grid-template-areas:
+        "address   link   contact"
+        "sns       link   contact";
+    }
+    @include media_queries(sp) {
+      margin: 0 auto 25px;
+      gap: 40px 0;
+      grid-template-areas:
+        "address"
+        "link"
+        "contact"
+        "sns";
+    }
+  }
+  .grid-item01 {
+    grid-area: address;
+  }
+  .grid-item02 {
+    grid-area: sns;
+  }
+  .grid-item03 {
+    grid-area: link;
+  }
+  .grid-item04 {
+    grid-area: contact;
+  }
+  &__address {
+    font-style: normal;
+    @include fontsize(12);
+  }
+  &__company-name {
+    display: block;
+    font-weight: 700;
+    @include fontsize(18);
+    margin-bottom: 10px;
+  }
+  &__sns {
+    display: flex;
+    align-items: flex-end;
+    gap: 12px;
+  }
+  &__sns-item {
+    width: 40px;
+    @include media_queries(pc) {
+      transition: all 0.3s;
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+  }
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+    @include media_queries(sp) {
+      max-width: 315px;
+    }
+  }
+  &__btn-link {
+    font-weight: 500;
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    background-color: $acsentColor;
+    padding-right: 10px;
+    margin-bottom: 18px;
+    box-sizing: border-box;
+    border-radius: 120px;
+    transition: all 0.3s;
+    &::before {
+      content: "";
+      width: 18px;
+      height: 18px;
+      background: url($base-dir + "assets/img/common/icon_mail.webp") no-repeat
+        center center / contain;
+    }
+    @include media_queries(pc) {
+      height: 45px;
+      @include fontsize(14);
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+    @include media_queries(sp) {
+      height: 40px;
+      @include fontsize(12);
+      margin-top: 35px;
+    }
+  }
+  &__tel-link {
+    display: block;
+    margin-bottom: 5px;
+    @include media_queries(pc) {
+      @include fontsize(14);
+    }
+    @include media_queries(sp) {
+      @include fontsize(12);
+    }
+  }
+  &__note {
+    opacity: 0.4;
+    @include media_queries(pc) {
+      @include fontsize(12);
+    }
+    @include media_queries(sp) {
+      @include fontsize(10);
+    }
+  }
+  &__copyright {
+    display: block;
+    text-align: center;
+    opacity: 0.4;
+    @include fontsize(10);
+  }
+  &__backtop {
+    position: fixed;
+    color: #333;
+    opacity: 0;
+    z-index: -1;
+    transition: all 0.5s;
+    bottom: 60px;
+    @include media_queries(pc) {
+      right: 50px;
+    }
+    @include media_queries(sp) {
+      right: 20px;
+    }
+    &.is-active {
+      z-index: 1;
+      opacity: 1;
+    }
+    &.is-stop {
+      position: absolute;
+      top: -175px;
+    }
+  }
+  &__backtop-link {
+    position: relative;
+    @include fontsize(14);
+    height: 115px;
+    display: flex;
+    align-items: flex-end;
+    &::before {
+      content: "";
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 1px;
+      height: 80px;
+      background-color: #333;
+      transition: all 0.3s;
+    }
+    &::after {
+      content: "";
+      position: absolute;
+      bottom: 105px;
+      left: 50%;
+      width: 4px;
+      height: 4px;
+      border-top: #333 solid 1px;
+      border-right: #333 solid 1px;
+      transform: translateX(-50%) rotate(-45deg);
+      transition: all 0.3s;
+    }
+    &:hover {
+      @include media_queries(pc) {
+        &::before {
+          bottom: 35px;
+        }
+        &::after {
+          bottom: 110px;
+        }
+      }
+    }
+  }
+  .mod-text-link {
+    &::before {
+      background-color: #fff;
+    }
+    &::after {
+      border-top: #fff solid 1px;
+      border-right: #fff solid 1px;
+    }
+    &__underline {
+      &::after {
+        background: #fff;
+      }
+    }
+  }
+}

@@ -1,0 +1,57 @@
+@charset "utf-8";
+
+.error{
+  &__inner {
+    text-align: center;
+    @include media_queries(pc){
+      padding: 230px 0 0;
+    }
+    @include media_queries(sp){
+      padding: 40px 0 0;
+    }
+  }
+  &__title{
+    @include media_queries(pc){
+      @include fontsize(30);
+    }
+    @include media_queries(sp){
+      @include fontsize(24);
+    }
+  }
+  &__lead{
+    font-weight: 700;
+    @include media_queries(pc){
+      @include fontsize(30);
+    }
+    @include media_queries(sp){
+      @include fontsize(16);
+    }
+  }
+  &__text{
+    @include media_queries(pc){
+      margin-top: 80px;
+    }
+    @include media_queries(sp){
+      margin-top: 20px;
+      @include fontsize(14);
+      text-align-last: left;
+      letter-spacing: 0.04em;
+    }
+  }
+  .mod-secondary-btn{
+    @include media_queries(pc){
+      margin-top: 80px;
+    }
+    @include media_queries(sp){
+      margin-top: 60px;
+    }
+  }
+  .footer{
+    @include media_queries(pc){
+      margin-top: 165px;
+    }
+    @include media_queries(sp){
+      margin-top: 80px;
+    }
+  }
+}

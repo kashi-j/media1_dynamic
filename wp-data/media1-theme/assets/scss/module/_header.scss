@@ -1,0 +1,377 @@
+@charset "utf-8";
+/* header */
+.header{
+  font-family: 'Zen Kaku Gothic New', sans-serif;
+  position: relative;
+  z-index: 99;
+  @include media_queries(pc){
+    height: 90px; 
+  }
+  @include media_queries(sp){
+    height: 70px;
+  }
+  &__inner{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    @include media_queries(pc){
+      height: 90px;
+      width: calc(100% - 60px);
+      margin: 0 auto;
+    }
+    @include media_queries(sp){
+      height: 70px;
+      padding: 0 10px 0 20px;
+    }
+  }
+  &__logo{
+    @include media_queries(pc){
+      width: 157px;
+      transition: all 0.3s;
+      &:hover{
+        opacity: 0.7;
+      }
+    }
+    @include media_queries(smallpc){
+      width: 67px;
+    }
+    &-link{
+      display: block;
+      picture{
+        display: block;
+      }
+    }
+  }
+  &__nav-wrapper{
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    @include media_queries(smallpc){
+      gap: 20px;
+    }
+    @include media_queries(sp){
+      height: 40px;
+      align-items: center;
+      gap: 10px;
+    }
+  }
+  &__nav{
+    @include media_queries(sp) {
+      position: fixed;
+      top: 70px;
+      width: 100%;
+      left: 0;
+      transform: translateX(100%);
+      transition: all 0.3s;
+      flex-direction: column;
+      z-index: 99999;
+      background-color: #1C1A1A;
+      padding: 40px 0 0 30px;
+      height: 100vh;
+    }
+    &.is-active{
+      @include media_queries(sp) {
+        transform: translateX(0);
+        width: 100%;
+      }
+    }
+  }
+  &__list-title{
+    @include media_queries(pc){
+      display: none;
+    }
+    @include media_queries(sp){
+      @include fontsize(12);
+      color: #fff;
+      opacity: 0.3;
+      &:not(:first-child){
+        margin-top: 65px;
+      }
+    }
+  }
+  &__list{
+    display: flex;
+    @include media_queries(pc){
+      gap: 40px;
+    }
+    @include media_queries(smallpc){
+      gap: 20px;
+    }
+    @include media_queries(sp){
+      flex-direction: column;
+      gap: 40px;
+      margin-top: 40px;
+    }
+  }
+  &__item{
+    font-weight: 500;
+    @include media_queries(pc){
+      @include fontsize(14);
+    }
+    @include media_queries(smallpc){
+      @include fontsize(12);
+    }
+  }
+  &__link{
+    @include media_queries(pc){
+      transition: all 0.2s;
+      &:hover{
+        color: $acsentColor;
+      }
+      &-underline{
+        position: relative;
+        &::after{
+          content: '';
+          position: absolute;
+          left: 0;
+          bottom: -8px;
+          width: 0%;
+          height: 2px;
+          background: $acsentColor;
+          z-index: -1;
+          transition: all 0.3s;
+        }
+        &:hover{
+          &::after{
+            width: 100%;
+          }
+        }
+      }
+      &.is-active{
+        color: $acsentColor;
+        .header__link-underline{
+          &::after{
+            width: 100%;
+          }
+        }
+      }  
+    }
+    @include media_queries(sp){
+      color: #fff;
+      @include fontsize(14);
+    }
+  }
+  &__sns{
+    @include media_queries(pc){
+      display: none;
+    }
+    @include media_queries(sp){
+      display: flex;
+      gap: 12px;
+      margin-top: 25px;
+    }
+    &-item{
+      @include media_queries(sp){
+        width: 40px;
+        height: 40px;
+      }
+    }
+  }
+  &__btn-link{
+    display: block;
+    color: #fff;
+    position: relative;
+    line-height: 1.1;
+    @include media_queries(pc){
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 20px 0 50px;
+      border-radius: 100px;
+      height: 54px;
+      transition: all 0.3;
+      &:hover{
+        opacity: 0.7;
+      }
+    }
+    @include media_queries(smallpc){
+      border-radius: 50%;
+      height: 80px;
+      width: 80px;
+      text-align: center;
+      box-sizing: border-box;
+      flex-direction: column;
+    }
+    @include media_queries(sp){
+      color: $baseColor;
+      height: 28px;
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &::before{
+      content: '';
+      position: absolute;
+      z-index: 2;
+      @include media_queries(pc){
+        width: 23px;
+        height: 23px;
+        top: 50%;
+        left: 15px;
+        transform: translateY(-50%);
+      }
+      @include media_queries(smallpc){
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      @include media_queries(sp){
+        width: 17px;
+        height: 17px;
+        top: 50%;
+        left: 5px;
+        transform: translateY(-50%);
+      }
+    }
+    &::after{
+      @include media_queries(sp){
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0;
+        transform: translateY(-50%);
+        width: 27px;
+        height: 27px;
+        border-radius: 50%;
+        z-index: 1;
+      }
+    }
+    &--orange{
+      font-family: 'Patrick Hand', cursive;
+      background-color: $acsentColor;
+      word-break: break-all;
+      @include fontsize(18);
+      &::before{
+        background: url($base-dir + 'assets/img/common/icon_header-link01.webp') no-repeat center center / contain;
+      }
+      @include media_queries(smallpc){
+        @include fontsize(15);
+        padding: 15px 0 0;
+      }
+      @include media_queries(sp){
+        @include fontsize(12);
+        padding: 0 0 0 35px;
+        background-color: transparent;
+        text-align: left;
+        &::after{
+          background: $acsentColor;
+        }
+      }
+    }
+    &--green{
+      font-weight: 700;
+      background-color: $mainColor;
+      @include media_queries(pc){
+        @include fontsize(14);
+        line-height: 1.5;
+      }
+      @include media_queries(smallpc){
+        @include fontsize(12);
+        padding: 15px 0 0;
+        line-height: 1.2;
+      }
+      @include media_queries(sp){
+        @include fontsize(10);
+        padding: 0 0 0 35px;
+        background-color: transparent;
+        &::after{
+          background: $mainColor;
+        }
+      }
+      &::before{
+        background: url($base-dir + 'assets/img/common/icon_header-link02.webp') no-repeat center center / contain;
+      }
+    }
+  }
+  &__btn-link-text{
+    @include media_queries(smallpc){
+      padding-top: 5px;
+    }
+    @include media_queries(sp){
+      padding-top: 0;
+    }
+    span{
+      @include media_queries(smallpc){
+        display: none;
+      }
+    }
+  }
+  &__menu{ 
+    padding: 0;
+    @include media_queries(pc){
+      display: none;
+    }
+    @include media_queries(sp){
+      display: block;
+      height: 50px;
+      width: 50px;
+      padding-top: 18px;
+    }
+    &-trigger{
+      max-width: 18px;
+      margin: 0 auto 8px;
+      span{
+        display: block;
+        width: 18px;
+        height: 2px;
+        background-color: $baseColor;
+        position: relative;
+        transition: all 0.3s;
+        &::before,
+        &::after{
+          content: '';
+          position: absolute;
+          width: 18px;
+          height: 2px;
+          background: $baseColor;
+          transition: all 0.3s;
+          left: 50%;
+          transform: translateX(-50%);
+        }
+        &::before{
+          top: -5px;
+        }
+        &::after{
+          top: 5px;
+        }
+      }
+      &.is-active{
+        span{
+          background: transparent;
+          &::before{
+            top: 0;
+            left: 0;
+            transform: rotate(45deg);
+          }
+          &::after{
+            top: 0;
+            left: 0;
+            transform: rotate(-45deg);
+          }
+        }
+        .header__menu-text{
+          &::after{
+            content: 'CLOSE';
+          }
+        }      
+      }
+    }
+    &-text{
+      position: relative;
+      font-size: 0;
+      height: 24px;
+      &::after{
+        content: 'MENU';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        @include fontsize(10);
+        font-weight: 500;
+        transition: all 0.3s;
+        color: $baseColor;
+      }
+    }
+  }
+}

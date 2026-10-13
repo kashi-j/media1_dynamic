@@ -1,0 +1,654 @@
+@charset "utf-8";
+
+.shop {
+  .mod-page-title {
+    @include media_queries(pc) {
+      width: calc(100% - 60px);
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 65px 0 0;
+    }
+    @include media_queries(sp) {
+      width: calc(100% - 40px);
+      margin: 0 auto;
+      padding: 60px 0 0;
+    }
+  }
+  .mod-subtitle-slash {
+    @include media_queries(pc) {
+      width: calc(100% - 60px);
+      max-width: 1120px;
+      margin: 0 auto;
+    }
+    @include media_queries(sp) {
+      width: calc(100% - 40px);
+      margin: 0 auto;
+    }
+  }
+  &__subtitle {
+    @include media_queries(pc) {
+      @include fontsize(30);
+    }
+    @include media_queries(sp) {
+      @include fontsize(22);
+    }
+  }
+  &__search {
+    @include media_queries(pc) {
+      margin-top: 175px;
+    }
+    @include media_queries(sp) {
+      margin-top: 105px;
+    }
+    &-box {
+      box-sizing: border-box;
+      background-color: #ccc;
+      @include media_queries(pc) {
+        padding: 85px 65px 45px;
+        margin: 25px auto 0;
+        width: calc(100% - 60px);
+        max-width: 1120px;
+      }
+      @include media_queries(sp) {
+        padding: 40px 20px;
+        margin-top: 40px;
+      }
+    }
+    &-form {
+      &-item {
+        &:not(:first-child) {
+          @include media_queries(pc) {
+            margin-top: 40px;
+          }
+          @include media_queries(sp) {
+            margin-top: 25px;
+          }
+        }
+        select,
+        input {
+          border: #999 solid 1px;
+          border-radius: 4px;
+          margin-top: 15px;
+          background-color: #fff;
+        }
+        select {
+          display: block;
+          height: 60px;
+          padding: 0 50px 0 15px;
+          color: #928f8f;
+          width: 100%;
+          @include media_queries(pc) {
+            max-width: 470px;
+          }
+          option {
+            color: $baseColor;
+          }
+        }
+      }
+      &-label {
+        .label-note {
+          @include fontsize(14);
+          margin-left: 12px;
+        }
+      }
+      &-select {
+        position: relative;
+        width: 100%;
+        height: 60px;
+        @include media_queries(pc) {
+          max-width: 470px;
+        }
+        &::after {
+          position: absolute;
+          content: "";
+          width: 7px;
+          height: 7px;
+          border-right: #928f8f 2px solid;
+          border-bottom: #928f8f 2px solid;
+          top: 50%;
+          right: 15px;
+          transform: translateY(-50%) rotate(45deg);
+          pointer-events: none;
+        }
+      }
+      &-wrapper {
+        display: flex;
+        @include media_queries(pc) {
+          margin-top: 12px;
+          gap: 10px 25px;
+          flex-wrap: wrap;
+        }
+        @include media_queries(sp) {
+          margin-top: 16px;
+          gap: 12px;
+          flex-direction: column;
+        }
+        .checkbox {
+          &__wrapper {
+            display: flex;
+            gap: 12px;
+            border: #999 solid 1px;
+            border-radius: 30px;
+            padding: 15px 0 15px 25px;
+            box-sizing: border-box;
+            @include fontsize(14);
+            background-color: #fff;
+            position: relative;
+            transition: all 0.3s;
+            width: 100%;
+            @include media_queries(pc) {
+              width: 218px;
+              &:hover {
+                border-color: black;
+                color: black;
+                border-width: 2px;
+              }
+            }
+          }
+          &__img {
+            width: 32px;
+            height: 32px;
+          }
+          &__name {
+            line-height: 32px;
+          }
+          input {
+            &:checked + .checkbox__wrapper {
+              border-color: black;
+              color: black;
+              border-width: 2px;
+            }
+          }
+        }
+      }
+    }
+    &-btn {
+      border-radius: 60px;
+      background-color: $acsentColor;
+      color: #fff;
+      font-weight: 500;
+      width: 100%;
+      text-align: center;
+      display: block;
+      padding: 17px 0;
+      letter-spacing: 0.1em;
+      @include media_queries(pc) {
+        max-width: 270px;
+        margin: 65px auto 0;
+        transition: all 0.3s;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+      @include media_queries(sp) {
+        max-width: 335px;
+        margin: 40px auto 0;
+      }
+    }
+    &-results {
+      .results {
+        &:not(:first-child) {
+          margin-top: 65px;
+        }
+        &__area {
+          padding-left: 0.9em;
+          font-weight: 400;
+          border-left: $acsentColor 4px solid;
+          @include media_queries(pc) {
+            @include fontsize(18);
+            line-height: 34px;
+          }
+          @include media_queries(sp) {
+            @include fontsize(16);
+            line-height: 30px;
+          }
+        }
+        &__prefecture {
+          @include media_queries(pc) {
+            margin-top: 40px;
+          }
+          @include media_queries(sp) {
+            margin-top: 35px;
+          }
+          &-name {
+            @include fontsize(16);
+            font-weight: 400;
+            background-color: #f7f8f9;
+            padding: 10px 20px;
+          }
+        }
+        &__shop {
+          &:not(:first-child) {
+            margin-top: 30px;
+          }
+          &-name {
+            display: flex;
+            @include media_queries(pc) {
+              gap: 40px;
+            }
+            @include media_queries(sp) {
+              gap: 18px;
+              flex-direction: column;
+            }
+            .name {
+              @include media_queries(pc) {
+                width: 220px;
+              }
+              &__link {
+                display: block;
+                font-weight: 700;
+                color: $acsentColor;
+                text-decoration: underline;
+                @include fontsize(16);
+                width: fit-content;
+              }
+            }
+            .category {
+              font-weight: 500;
+              @include fontsize(14);
+              line-height: 1;
+              font-family: "Zen Kaku Gothic New", sans-serif;
+              padding: 8px 20px 10px;
+              color: #fff;
+              height: fit-content;
+              width: fit-content;
+              &--media1 {
+                background-color: $acsentColor;
+              }
+              &--deli {
+                background-color: #e50112;
+              }
+              &--discount {
+                background-color: #928f8f;
+              }
+              &--self {
+                background-color: #1b9f97;
+              }
+              &--fg {
+                background-color: #005e40;
+              }
+            }
+          }
+          &-btn {
+            @include media_queries(pc) {
+              display: none;
+            }
+            @include media_queries(sp) {
+              cursor: pointer;
+              font-weight: 500;
+              @include fontsize(14);
+              position: relative;
+              padding-left: 30px;
+              margin-top: 15px;
+              height: 21px;
+              &::before,
+              &::after {
+                position: absolute;
+                content: "";
+                background-color: #fff;
+                width: 11px;
+                height: 1px;
+                z-index: 1;
+                transition: all 0.3s;
+              }
+              &::before {
+                top: 10px;
+                left: 5px;
+              }
+              &::after {
+                top: 10px;
+                left: 5px;
+                transform: rotate(90deg);
+              }
+              span {
+                position: relative;
+                display: block;
+                width: 100%;
+                &::before {
+                  position: absolute;
+                  content: "";
+                  top: 0;
+                  left: -30px;
+                  width: 21px;
+                  height: 21px;
+                  background-color: $acsentColor;
+                  border-radius: 50%;
+                }
+                &::after {
+                  position: absolute;
+                  content: "店舗詳細を見る";
+                  @include fontsize(14);
+                  line-height: 1.45;
+                }
+              }
+              &.is-active {
+                &::after {
+                  transform: rotate(0deg);
+                }
+                span {
+                  &::after {
+                    content: "店舗詳細を閉じる";
+                  }
+                }
+              }
+            }
+          }
+          &-details {
+            display: flex;
+            flex-wrap: wrap;
+            border-bottom: #eeeeee 1px solid;
+            @include media_queries(pc) {
+              gap: 20px 60px;
+              margin-top: 15px;
+              padding: 15px 0 30px;
+              border-top: #eeeeee 1px dashed;
+            }
+            @include media_queries(sp) {
+              margin-top: 20px;
+              display: none;
+            }
+          }
+          &-info {
+            display: flex;
+            @include media_queries(pc) {
+              gap: 60px;
+            }
+            @include media_queries(sp) {
+              gap: 20px;
+              padding: 0 10px 15px;
+              height: 32px;
+            }
+            &-wrapper {
+              display: flex;
+              @include media_queries(pc) {
+                gap: 20px;
+              }
+              @include media_queries(sp) {
+                gap: 8px;
+              }
+            }
+            &-img {
+              width: 32px;
+            }
+          }
+          &-hours,
+          &-tel {
+            @include media_queries(sp) {
+              @include fontsize(14);
+            }
+          }
+          &-tel {
+            @include media_queries(sp) {
+              text-decoration: underline;
+            }
+          }
+          &-type {
+            display: flex;
+            @include media_queries(pc) {
+              gap: 20px;
+            }
+            @include media_queries(sp) {
+              border-top: #eeeeee 1px dashed;
+              padding: 15px 10px;
+              width: 100%;
+              gap: 50px;
+            }
+          }
+          &-category {
+            @include media_queries(sp) {
+              @include fontsize(14);
+              width: 70px;
+              line-height: 1.5;
+            }
+          }
+          &-handled {
+            display: flex;
+            gap: 8px;
+          }
+          &-icon {
+            width: 32px;
+            height: 32px;
+          }
+        }
+      }
+    }
+  }
+  &__inner {
+    @include media_queries(pc) {
+      padding: 100px 0 30px;
+    }
+    @include media_queries(sp) {
+      padding: 100px 0 20px;
+    }
+  }
+  &__error-text {
+    @include media_queries(pc) {
+      text-align: center;
+    }
+    @include media_queries(sp) {
+      @include fontsize(14);
+    }
+  }
+}
+
+.shop-detail {
+  &__logo {
+    text-align: center;
+    @include media_queries(pc) {
+      height: 32px;
+      margin: 110px auto 0;
+    }
+    @include media_queries(sp) {
+      height: 34px;
+      margin: 70px auto 0;
+    }
+    img {
+      height: 100%;
+      width: auto;
+    }
+  }
+  &__name {
+    font-weight: 700;
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    text-align: center;
+    @include media_queries(pc) {
+      @include fontsize(30);
+      margin-top: 60px;
+    }
+    @include media_queries(sp) {
+      @include fontsize(18);
+      margin-top: 35px;
+    }
+  }
+  &__content {
+    &-item {
+      @include media_queries(pc) {
+        margin-top: 105px;
+      }
+      @include media_queries(sp) {
+        margin-top: 65px;
+      }
+    }
+    &-title {
+      @include media_queries(pc) {
+        @include fontsize(28);
+      }
+      @include media_queries(sp) {
+        @include fontsize(18);
+      }
+    }
+    &-inner {
+      @include media_queries(pc) {
+        margin-top: 65px;
+      }
+      @include media_queries(sp) {
+        margin-top: 30px;
+      }
+      .item {
+        border-bottom: #eeeeee 1px dashed;
+        display: flex;
+        @include media_queries(pc) {
+          padding: 25px 20px;
+          gap: 30px;
+          justify-content: space-between;
+        }
+        @include media_queries(sp) {
+          padding: 15px 0;
+          gap: 20px;
+        }
+        &__head {
+          font-weight: 500;
+          @include media_queries(pc) {
+            width: 110px;
+          }
+          @include media_queries(sp) {
+            width: 95px;
+            @include fontsize(14);
+          }
+        }
+        &__detail {
+          width: 100%;
+          flex: 1;
+          @include media_queries(sp) {
+            @include fontsize(14);
+          }
+          &-wrapper {
+            gap: 8px 60px;
+            display: flex;
+            flex-wrap: wrap;
+            @include media_queries(sp) {
+              flex-direction: column;
+            }
+            &--brand {
+              @include media_queries(pc) {
+                gap: 20px;
+              }
+              @include media_queries(sp) {
+                flex-direction: row;
+                gap: 10px;
+              }
+            }
+          }
+          &-icon-wrapper {
+            display: flex;
+            gap: 10px;
+          }
+          &-icon {
+            @include media_queries(pc) {
+              width: 32px;
+              height: 32px;
+            }
+            @include media_queries(sp) {
+              width: 28px;
+              height: 28px;
+            }
+          }
+          &-icon-name {
+            @include fontsize(14);
+          }
+        }
+        &__logo {
+          @include media_queries(pc) {
+            width: 54px;
+            height: 54px;
+          }
+          @include media_queries(sp) {
+            width: 38px;
+            height: 38px;
+          }
+        }
+        &__other-brand {
+          line-height: 1.5;
+          @include media_queries(pc) {
+            margin-top: 20px;
+          }
+          @include media_queries(sp) {
+            margin-top: 10px;
+          }
+        }
+        &__external-link {
+          position: relative;
+          text-decoration: underline;
+          &::after {
+            content: "";
+            position: absolute;
+            width: 16px;
+            height: 16px;
+            background: url($base-dir + "assets/img/common/icon_link-b.webp")
+              no-repeat center center / contain;
+            top: 50%;
+            right: -24px;
+            transform: translateY(-50%);
+          }
+        }
+      }
+      &--top {
+        gap: 30px;
+        display: flex;
+        @include media_queries(pc) {
+          justify-content: space-between;
+        }
+        @include media_queries(tab) {
+          flex-direction: column;
+        }
+        @include media_queries(sp) {
+          flex-direction: column;
+        }
+        .item {
+          &__detail {
+            @include media_queries(pc) {
+              max-width: 350px;
+            }
+            @include media_queries(tab) {
+              max-width: 100%;
+            }
+          }
+        }
+      }
+    }
+    &-wrapper {
+      @include media_queries(pc) {
+        max-width: 580px;
+      }
+      @include media_queries(tab) {
+        max-width: 100%;
+      }
+      .note {
+        @include fontsize(14);
+        line-height: 1.5;
+        text-indent: -1em;
+        padding-left: 1em;
+        margin-top: 30px;
+      }
+    }
+    &-img {
+      img {
+        width: 100%;
+        object-fit: cover;
+        @include media_queries(pc) {
+          max-width: 480px;
+          height: 300px;
+        }
+        @include media_queries(sp) {
+          height: 210px;
+        }
+      }
+    }
+    &-map {
+      @include media_queries(pc) {
+        max-width: 800px;
+        height: 496px;
+      }
+      @include media_queries(tab) {
+        max-width: 100%;
+      }
+      @include media_queries(sp) {
+        height: 210px;
+      }
+      iframe {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

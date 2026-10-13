@@ -1,0 +1,105 @@
+@charset "utf-8";
+
+.info{
+  &__lead{
+    line-height: 2.1;
+    @include media_queries(pc){
+      @include fontsize(18);
+      margin-top: 105px;
+    }
+    @include media_queries(sp){
+      @include fontsize(16);
+      margin-top: 40px;
+    }
+    span{
+      display: block;
+      &:not(:first-child){
+        margin-top: 1.9em;
+      }
+    }
+  }
+  &__list{
+    @include media_queries(pc){
+    }    
+    @include media_queries(sp){
+    }
+  }
+  &__item{
+    display: flex;
+    max-width: 1520px;
+    @include media_queries(pc){
+      justify-content: space-between;
+      margin-top: 180px;
+      gap: 30px;
+    }
+    @include media_queries(sp){
+      flex-direction: column;
+      margin-top: 65px;
+      gap: 65px;
+    }
+    &--orange{  
+      @include media_queries(pc){
+        margin-right: auto;
+        flex-direction: row;
+      }
+      .info__title{
+        color: $acsentColor;
+      }
+    }
+    &--green{
+      @include media_queries(pc){
+        margin-left: auto;
+        flex-direction: row-reverse;
+      }
+      .info__title{
+        color: $mainColor;
+      }
+    }
+  }
+  &__content{
+    @include media_queries(pc){
+      @include fontsize(18);
+      width: calc(51% - 30px);
+      max-width: 440px;
+    }
+  }
+  &__title{
+    font-family: 'Zen Kaku Gothic New', sans-serif;
+    font-weight: 700;
+    @include media_queries(pc){
+      @include fontsize(34);
+    }
+    @include media_queries(sp){
+      @include fontsize(23);
+    }
+    &-number{
+      display: block;
+      line-height: 1;
+      @include media_queries(pc){
+        @include fontsize(22);
+        margin-bottom: 15px;
+      }
+      @include media_queries(sp){
+        @include fontsize(16);
+      }
+    }
+  }
+  &__text{
+    line-height: 1.89;
+    @include media_queries(pc){
+      margin-top: 30px;
+    }
+    @include media_queries(sp){
+      margin-top: 25px;
+    }
+  }
+  &__img{
+    @include media_queries(pc){
+      width: 49%;
+      max-width: 540px;
+    }
+  }
+  .mod-text-btn{
+    margin-top: 50px;
+  }
+}
